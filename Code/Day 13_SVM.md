@@ -1,4 +1,7 @@
 # Day 13 | 支持向量机 (SVM)
+<p align="center">
+  <img src="https://github.com/MachineLearning100/100-Days-Of-ML-Code/blob/master/Info-graphs/Day%2012.jpg">
+</p>
 
 ## 导入库
 ```python
@@ -16,7 +19,7 @@ y = dataset.iloc[:, 4].values
 
 ## 拆分数据集为训练集合和测试集合
 ```python
-from sklearn.cross_validation import train_test_split
+from sklearn.model_selection import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.25, random_state = 0)
 ```
 
@@ -25,7 +28,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.25, rand
 from sklearn.preprocessing import StandardScaler
 sc = StandardScaler()
 X_train = sc.fit_transform(X_train)
-X_test = sc.transform(X_test)
+X_test = sc.fit_transform(X_test)
 ```
 
 ## 适配SVM到训练集合
